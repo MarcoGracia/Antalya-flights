@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Antalya flights, May 2027</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFFFF; --surface:#EFF6F6; --surface-2:#E3EFF0; --ink:#13233A; --muted:#55687C; --line:#D5E1E4;
+  --accent:#0E7C86; --accent-ink:#FFFFFF; --stay:#BFD6D9; --whit:#FDF3D8;
+  --peg:#E8A200; --peg-soft:#FFF3D1; --tra:#14965F; --tra-soft:#DDF3E8; --cor:#D3262E; --cor-soft:#FBE2E3;
+  --radius:14px;
+  color-scheme: light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E1925; --surface:#152433; --surface-2:#1C2F41; --ink:#E9F1F5; --muted:#9BB0C2; --line:#25394C;
+    --accent:#45BAC2; --accent-ink:#06232A; --stay:#2C4A5C; --whit:#33290F;
+    --peg:#F4B930; --peg-soft:#3A2D0B; --tra:#3BC488; --tra-soft:#0F3326; --cor:#F25A60; --cor-soft:#3E1A1D;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E1925; --surface:#152433; --surface-2:#1C2F41; --ink:#E9F1F5; --muted:#9BB0C2; --line:#25394C;
+  --accent:#45BAC2; --accent-ink:#06232A; --stay:#2C4A5C; --whit:#33290F;
+  --peg:#F4B930; --peg-soft:#3A2D0B; --tra:#3BC488; --tra-soft:#0F3326; --cor:#F25A60; --cor-soft:#3E1A1D;
+  color-scheme: dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.5;-webkit-text-size-adjust:100%}
+h1,h2,h3{font-family:"Bricolage Grotesque","Atkinson Hyperlegible",system-ui,sans-serif;line-height:1.1;margin:0}
+.wrap{max-width:860px;margin:0 auto;padding:0 18px}
+a{color:var(--accent)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
+
+/* hero */
+.hero.wrap{padding-top:40px;padding-bottom:36px}
+.hero h1{font-size:clamp(2.3rem,8vw,3.6rem);font-weight:800;letter-spacing:-.02em}
+.hero .lede{max-width:56ch;color:var(--muted);font-size:1.06rem;margin:14px 0 0}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:22px 0 0;padding:0;list-style:none}
+@media (min-width:640px){.facts{grid-template-columns:repeat(4,1fr)}}
+.facts li{background:var(--surface);border-radius:12px;padding:12px 14px}
+.facts b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:1.35rem;line-height:1.1}
+.facts span{color:var(--muted);font-size:.88rem}
+
+/* controls */
+.controls{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding:12px 0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.controls .wrap{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center}
+.ctl{display:flex;align-items:center;gap:8px}
+.ctl-label{font-size:.85rem;color:var(--muted)}
+.seg{display:inline-flex;background:var(--surface);border-radius:999px;padding:3px}
+.seg button{border:0;background:transparent;padding:7px 13px;border-radius:999px;font-size:.92rem;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);font-weight:700}
+
+main > section.wrap{padding-top:52px;padding-bottom:52px}
+main > section + section{border-top:1px solid var(--line)}
+h2{font-size:1.55rem;font-weight:700;margin-bottom:10px}
+.sub{color:var(--muted);margin:0 0 22px;max-width:60ch}
+
+/* timeline */
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin:0 0 12px;padding:0;list-style:none;font-size:.88rem;color:var(--muted)}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.tl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -18px;padding:0 18px}
+.tl{display:grid;grid-template-columns:30px repeat(15,minmax(21px,1fr)) 62px;min-width:440px;row-gap:10px;align-items:center;padding-bottom:6px;padding-right:18px}
+.tl .dh{font-size:.72rem;text-align:center;color:var(--muted);line-height:1.15;padding:4px 0}
+.tl .dh b{display:block;font-size:.9rem;color:var(--ink)}
+.tl .dh.whit{background:var(--whit);border-radius:6px}
+.tl .whit-note{grid-column:4 / span 2;font-size:.68rem;text-align:center;color:var(--muted);margin-top:-4px}
+.tl-row{display:contents}
+.tl .letter{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.05rem;text-align:center;cursor:pointer;background:none;border:0;padding:0}
+.bar{height:26px;display:flex;border-radius:7px;overflow:hidden;cursor:pointer;border:0;padding:0;background:none}
+.bar .cap{flex:0 0 auto}
+.bar .mid{flex:1;background:var(--stay);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;color:var(--ink)}
+.cap.peg{background:var(--peg)} .cap.tra{background:var(--tra)} .cap.cor{background:var(--cor)}
+.tl .tprice{text-align:right;font-weight:700;font-variant-numeric:tabular-nums;cursor:pointer;background:none;border:0;padding:0}
+.tl .is-best{color:var(--accent)}
+
+/* option cards */
+.opts{display:grid;gap:18px}
+@media (min-width:760px){.opts{grid-template-columns:1fr 1fr}}
+.opt{background:var(--surface);border-radius:var(--radius);padding:20px;scroll-margin-top:90px;transition:box-shadow .3s}
+.opt.flash{box-shadow:0 0 0 3px var(--accent)}
+.opt-head{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:start}
+.opt .letter-big{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:2rem;line-height:1;width:44px;height:44px;border-radius:12px;background:var(--bg);display:grid;place-items:center}
+.opt h3{font-size:1.15rem;font-weight:700;margin-bottom:4px}
+.opt .nights{color:var(--muted);font-size:.92rem}
+.opt .price{text-align:right}
+.opt .price b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:1.75rem;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
+.opt .price span{font-size:.8rem;color:var(--muted)}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 0}
+.badge{font-size:.8rem;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--accent);color:var(--accent-ink)}
+.badge.soft{background:var(--surface-2);color:var(--ink);font-weight:400}
+.legs{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:10px}
+.leg{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;background:var(--bg);border-radius:10px;padding:10px 12px}
+.chip{font-size:.78rem;font-weight:700;padding:3px 8px;border-radius:6px;white-space:nowrap}
+.chip.peg{background:var(--peg-soft);color:var(--ink);box-shadow:inset 3px 0 0 var(--peg)}
+.chip.tra{background:var(--tra-soft);color:var(--ink);box-shadow:inset 3px 0 0 var(--tra)}
+.chip.cor{background:var(--cor-soft);color:var(--ink);box-shadow:inset 3px 0 0 var(--cor)}
+.leg .what{font-size:.92rem;line-height:1.3}
+.leg .what small{display:block;color:var(--muted);font-size:.82rem}
+.leg .lp{font-weight:700;font-variant-numeric:tabular-nums}
+details{margin-top:12px;font-size:.9rem}
+summary{cursor:pointer;color:var(--accent);font-weight:700}
+.bd{margin:8px 0 0;padding:0;list-style:none;display:grid;gap:4px}
+.bd li{display:flex;justify-content:space-between;gap:12px;color:var(--muted)}
+.bd li b{color:var(--ink);font-weight:400;font-variant-numeric:tabular-nums}
+.bd li.tot{border-top:1px solid var(--line);padding-top:6px;margin-top:4px;color:var(--ink);font-weight:700}
+.bd li.tot b{font-weight:700}
+.vote{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:14px;padding:11px 14px;border-radius:12px;background:var(--bg);color:var(--ink);text-decoration:none;font-weight:700;border:1.5px solid var(--line)}
+.vote:hover{border-color:var(--accent)}
+.vote svg{width:18px;height:18px;fill:#25D366}
+
+/* airlines */
+.tbl-wrap{overflow-x:auto;margin:0 -18px;padding:0 18px}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.92rem}
+th,td{text-align:left;padding:10px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:700}
+thead th{font-family:"Bricolage Grotesque",sans-serif;font-size:1rem}
+td small{color:var(--muted);display:block}
+
+/* steps */
+.steps{margin:0;padding:0;list-style:none;counter-reset:s;display:grid;gap:12px}
+.steps li{counter-increment:s;display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start}
+.steps li::before{content:counter(s);font-family:"Bricolage Grotesque",sans-serif;font-weight:800;width:34px;height:34px;border-radius:50%;background:var(--surface);display:grid;place-items:center}
+.steps b{display:block}
+.steps span{color:var(--muted)}
+
+footer.wrap{padding-top:28px;padding-bottom:48px;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);margin-top:10px}
+footer p{margin:0 0 8px;max-width:70ch}
+
+@media (prefers-reduced-motion: reduce){*{transition:none!important;scroll-behavior:auto!important}}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+
+<header class="hero wrap">
+  <h1>Antalya flights, May 2027</h1>
+  <p class="lede">Eight ways to get there and back, all direct from Schiphol. Choose what you’re bringing and every price on the page updates. Then send your vote to the group.</p>
+  <ul class="facts">
+    <li><b>Direct</b><span>every flight, Schiphol ⇄ Antalya</span></li>
+    <li><b>10:00+</b><span>no departures before 10 in the morning</span></li>
+    <li><b>17:00</b><span>every flight lands before this</span></li>
+    <li><b>7–9 nights</b><span>around 17 May</span></li>
+  </ul>
+</header>
+
+<div class="controls" role="region" aria-label="What are you bringing">
+  <div class="wrap">
+    <div class="ctl"><span class="ctl-label">Luggage</span>
+      <div class="seg" data-key="bag">
+        <button type="button" data-val="0" aria-pressed="true">Small bag only</button>
+        <button type="button" data-val="1" aria-pressed="false">+ Cabin trolley</button>
+      </div>
+    </div>
+    <div class="ctl"><span class="ctl-label">Seat</span>
+      <div class="seg" data-key="seat">
+        <button type="button" data-val="0" aria-pressed="true">Any seat</button>
+        <button type="button" data-val="1" aria-pressed="false">Choose my seat</button>
+      </div>
+    </div>
+    <div class="ctl"><span class="ctl-label">Sort</span>
+      <div class="seg" data-key="sort">
+        <button type="button" data-val="price" aria-pressed="true">Cheapest</button>
+        <button type="button" data-val="date" aria-pressed="false">By date</button>
+        <button type="button" data-val="nights" aria-pressed="false">Most nights</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main>
+  <section class="wrap" aria-labelledby="tl-h">
+    <h2 id="tl-h">All options at a glance</h2>
+    <p class="sub">Each bar is one trip: coloured ends are the flights, the middle is time in Antalya. Tap a bar to jump to its details. Prices are per person, return.</p>
+    <ul class="legend">
+      <li><i style="background:var(--peg)"></i>Pegasus</li>
+      <li><i style="background:var(--tra)"></i>Transavia</li>
+      <li><i style="background:var(--cor)"></i>Corendon</li>
+      <li><i style="background:var(--whit);outline:1px solid var(--line)"></i>Whitsun weekend</li>
+    </ul>
+    <div class="tl-scroll"><div class="tl" id="tl"></div></div>
+  </section>
+
+  <section class="wrap" aria-labelledby="opt-h">
+    <h2 id="opt-h">The options</h2>
+    <p class="sub" id="opt-sub"></p>
+    <div class="opts" id="opts"></div>
+  </section>
+
+  <section class="wrap" aria-labelledby="air-h">
+    <h2 id="air-h">What each airline charges for extras</h2>
+    <p class="sub">Every ticket includes one small bag that fits under the seat. Anything bigger costs extra, and each airline packages it differently.</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th></th><th><span class="chip peg">Pegasus</span></th><th><span class="chip tra">Transavia</span></th><th><span class="chip cor">Corendon</span></th></tr></thead>
+        <tbody>
+          <tr><th>Free small bag</th><td>40×30×15 cm, 3 kg</td><td>40×30×20 cm</td><td>40×30×15 cm, 3 kg</td></tr>
+          <tr><th>Cabin trolley</th><td><b>+€15</b><small>55×40×20 cm, 8 kg</small></td><td><b>+€35</b><small>55×40×25 cm, includes seat choice and priority boarding</small></td><td><b>+€42</b><small>“Trolley Prio”: 10 kg, includes seat choice and priority boarding</small></td></tr>
+          <tr><th>Seat choice</th><td><b>+€18</b><small>sold separately</small></td><td>Included with the trolley<small>priced here via the trolley package</small></td><td>Included with Trolley Prio<small>priced here via the trolley package</small></td></tr>
+          <tr><th>Times on our dates</th><td>Out at 10:05 or 10:20</td><td>Back between 11:45 and 12:45</td><td>Back at 13:00 or 13:10</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="how-h">
+    <h2 id="how-h">How to book once we’ve picked</h2>
+    <ol class="steps">
+      <li><div><b>Book the two flights separately</b><span>The way out and the way back are on different airlines, so they’re two one-way tickets on two websites.</span></div></li>
+      <li><div><b>Book in small groups of 2–4</b><span>Airlines price every seat in a booking at the same level. Searching for 11 at once can push everyone onto a more expensive fare.</span></div></li>
+      <li><div><b>Add extras while booking</b><span>The trolley and seat are cheapest during booking, not at the airport.</span></div></li>
+      <li><div><b>Don’t wait too long</b><span>The days around Whitsun fill up first, and these prices were noticeably low for the season when checked.</span></div></li>
+    </ol>
+  </section>
+</main>
+
+<footer class="wrap">
+  <p>Prices checked on 14 November 2026 on Google Flights and on the Pegasus, Transavia and Corendon websites, for 1 adult. Pegasus prices include the €15 check-in fee and €8 service fee its checkout adds, which its calendar view leaves out. They change daily, so treat them as a guide and check before paying.</p>
+  <p>Left out on purpose: TUI (€220–360 one way), Transavia and Corendon morning flights out (06:00–07:20), Pegasus flights back (they leave at 05:45), and anything landing at 22:00 or later.</p>
+</footer>
+
+<script>
+(function(){
+  var AIR = {
+    peg:{name:"Pegasus", extras:function(b,s){return (b?15:0)+(s?18:0);},
+         note:function(b,s){var p=[];if(b)p.push("trolley €15");if(s)p.push("seat €18");return p.join(" + ");}},
+    tra:{name:"Transavia", extras:function(b,s){return (b||s)?35:0;},
+         note:function(b,s){return (b||s)?"trolley package €35 (incl. seat)":"";}},
+    cor:{name:"Corendon", extras:function(b,s){return (b||s)?42:0;},
+         note:function(b,s){return (b||s)?"Trolley Prio €42 (incl. seat)":"";}}
+  };
+  var F = {
+    P15:{air:"peg",day:15,dep:"10:05",arr:"14:55",base:180.88,dir:"out"},
+    P18:{air:"peg",day:18,dep:"10:05",arr:"14:55",base:160.88,dir:"out"},
+    P20:{air:"peg",day:20,dep:"10:20",arr:"15:10",base:160.88,dir:"out"},
+    T22:{air:"tra",day:22,dep:"11:50",arr:"15:05",base:154,dir:"back"},
+    C23:{air:"cor",day:23,dep:"13:00",arr:"16:30",base:175,dir:"back"},
+    C24:{air:"cor",day:24,dep:"13:00",arr:"16:30",base:95,dir:"back"},
+    T24:{air:"tra",day:24,dep:"11:45",arr:"15:00",base:171,dir:"back"},
+    C25:{air:"cor",day:25,dep:"13:00",arr:"16:30",base:155,dir:"back"},
+    T26:{air:"tra",day:26,dep:"12:45",arr:"16:00",base:154,dir:"back"},
+    C26:{air:"cor",day:26,dep:"13:00",arr:"16:30",base:155,dir:"back"},
+    C28:{air:"cor",day:28,dep:"13:10",arr:"16:40",base:158,dir:"back"}
+  };
+  var OPTS = [
+    {id:"A",out:"P15",back:"T22"},{id:"B",out:"P15",back:"C23"},
+    {id:"C",out:"P15",back:"C24"},{id:"D",out:"P15",back:"T24"},
+    {id:"E",out:"P18",back:"C25"},{id:"F",out:"P18",back:"T26"},
+    {id:"G",out:"P18",back:"C26"},{id:"H",out:"P20",back:"C28"}
+  ];
+  var DAYS=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+  function wd(d){return DAYS[new Date(2027,4,d).getDay()];}
+  var state={bag:0,seat:0,sort:"price"};
+  var FIRST=14, LAST=28;
+
+  function leg(fid){var f=F[fid];var ex=AIR[f.air].extras(state.bag,state.seat);return {f:f,ex:ex,total:f.base+ex};}
+  function eur(n){return "€"+Math.round(n);}
+  function calc(o){var a=leg(o.out),b=leg(o.back);return {o:o,a:a,b:b,total:a.total+b.total,nights:F[o.back].day-F[o.out].day};}
+
+  function extrasText(){
+    if(state.bag&&state.seat)return "with a cabin trolley and seat choice";
+    if(state.bag)return "with a cabin trolley";
+    if(state.seat)return "with seat choice";
+    return "with just the small bag";
+  }
+
+  function render(){
+    var rows=OPTS.map(calc);
+    var minT=Math.min.apply(null,rows.map(function(r){return r.total;}));
+    var minPN=Math.min.apply(null,rows.map(function(r){return r.total/r.nights;}));
+    rows.forEach(function(r){
+      r.badges=[];
+      if(r.total===minT)r.badges.push(["Cheapest",""]);
+      if(r.total/r.nights===minPN&&r.total!==minT)r.badges.push(["Best price per night",""]);
+      else if(r.total/r.nights===minPN)r.badges.push(["Best price per night",""]);
+      if(F[r.o.out].day<=17&&F[r.o.back].day>=17)r.badges.push(["Includes Whitsun","soft"]);
+      if(r.o.out===r.o.back)r.badges.push(["",""]);
+    });
+    var sorted=rows.slice();
+    if(state.sort==="price")sorted.sort(function(x,y){return x.total-y.total;});
+    else if(state.sort==="date")sorted.sort(function(x,y){return F[x.o.out].day-F[y.o.out].day||F[x.o.back].day-F[y.o.back].day;});
+    else sorted.sort(function(x,y){return y.nights-x.nights||x.total-y.total;});
+
+    document.getElementById("opt-sub").textContent="Prices per person, return, "+extrasText()+". A group of 11 pays about 11× this.";
+    renderTimeline(sorted,minT);
+    renderCards(sorted);
+  }
+
+  function renderTimeline(rows,minT){
+    var tl=document.getElementById("tl");tl.textContent="";
+    var corner=document.createElement("div");tl.appendChild(corner);
+    for(var d=FIRST;d<=LAST;d++){
+      var h=document.createElement("div");h.className="dh"+((d===16||d===17)?" whit":"");
+      h.innerHTML="<b>"+d+"</b>"+wd(d).charAt(0)+wd(d).charAt(1);
+      tl.appendChild(h);
+    }
+    var pc=document.createElement("div");pc.className="dh";pc.innerHTML="<b>p.p.</b>&nbsp;";tl.appendChild(pc);
+    rows.forEach(function(r){
+      var o=r.o, s=F[o.out].day-FIRST+2, e=F[o.back].day-FIRST+2, span=e-s+1;
+      var l=document.createElement("button");l.type="button";l.className="letter";l.textContent=o.id;
+      l.style.gridColumn="1";l.setAttribute("aria-label","Option "+o.id+" details");l.onclick=function(){go(o.id);};
+      var bar=document.createElement("button");bar.type="button";bar.className="bar";
+      bar.style.gridColumn=s+" / span "+span;
+      bar.setAttribute("aria-label","Option "+o.id+": "+wd(F[o.out].day)+" "+F[o.out].day+" to "+wd(F[o.back].day)+" "+F[o.back].day+" May, "+r.nights+" nights, "+eur(r.total));
+      var w=(100/span)+"%";
+      bar.innerHTML='<span class="cap '+F[o.out].air+'" style="width:'+w+'"></span><span class="mid">'+r.nights+'n</span><span class="cap '+F[o.back].air+'" style="width:'+w+'"></span>';
+      bar.onclick=function(){go(o.id);};
+      var p=document.createElement("button");p.type="button";p.className="tprice"+(r.total===minT?" is-best":"");
+      p.style.gridColumn=(LAST-FIRST+3)+"";p.textContent=eur(r.total);p.onclick=function(){go(o.id);};
+      p.setAttribute("aria-hidden","true");p.tabIndex=-1;
+      tl.appendChild(l);tl.appendChild(bar);tl.appendChild(p);
+    });
+  }
+
+  function legHTML(label,L){
+    var f=L.f;
+    return '<li class="leg"><span class="chip '+f.air+'">'+AIR[f.air].name+'</span>'+
+      '<span class="what">'+label+' '+wd(f.day)+' '+f.day+' May'+
+      '<small>'+f.dep+' '+(f.dir==="out"?"Schiphol":"Antalya")+' → '+f.arr+' '+(f.dir==="out"?"Antalya":"Schiphol")+'</small></span>'+
+      '<span class="lp">'+eur(L.total)+'</span></li>';
+  }
+  function bdHTML(label,L){
+    var f=L.f, n=AIR[f.air].note(state.bag,state.seat);
+    var s='<li><span>'+label+' ('+AIR[f.air].name+') ticket</span><b>'+eur(f.base)+'</b></li>';
+    if(L.ex)s+='<li><span>'+n+'</span><b>+'+eur(L.ex)+'</b></li>';
+    return s;
+  }
+
+  function renderCards(rows){
+    var box=document.getElementById("opts");box.textContent="";
+    rows.forEach(function(r){
+      var o=r.o,a=F[o.out],b=F[o.back];
+      var title=wd(a.day)+" "+a.day+" → "+wd(b.day)+" "+b.day+" May";
+      var msg="✈️ My Antalya vote: option "+o.id+". "+title+" ("+r.nights+" nights), "+AIR[a.air].name+" out at "+a.dep+", "+AIR[b.air].name+" back at "+b.dep+". About "+eur(r.total)+" per person "+extrasText()+".";
+      var badges=r.badges.filter(function(x){return x[0];}).map(function(x){return '<span class="badge '+x[1]+'">'+x[0]+'</span>';}).join("");
+      var el=document.createElement("article");el.className="opt";el.id="opt-"+o.id;
+      el.innerHTML=
+        '<div class="opt-head"><span class="letter-big" aria-hidden="true">'+o.id+'</span>'+
+        '<div><h3>'+title+'</h3><div class="nights">'+r.nights+' nights in Antalya</div></div>'+
+        '<div class="price"><b>'+eur(r.total)+'</b><span>per person</span></div></div>'+
+        (badges?'<div class="badges">'+badges+'</div>':'')+
+        '<ul class="legs">'+legHTML("Out",r.a)+legHTML("Back",r.b)+'</ul>'+
+        '<details><summary>Price breakdown</summary><ul class="bd">'+bdHTML("Out",r.a)+bdHTML("Back",r.b)+
+        '<li class="tot"><span>Total per person</span><b>'+eur(r.total)+'</b></li>'+
+        '<li><span>Price per night</span><b>'+eur(r.total/r.nights)+'</b></li></ul></details>'+
+        '<a class="vote" target="_blank" rel="noopener" href="https://wa.me/?text='+encodeURIComponent(msg)+'">'+
+        '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg>'+
+        'Vote for '+o.id+' on WhatsApp</a>';
+      box.appendChild(el);
+    });
+  }
+
+  function go(id){
+    var el=document.getElementById("opt-"+id);if(!el)return;
+    el.scrollIntoView({block:"start"});
+    el.classList.add("flash");setTimeout(function(){el.classList.remove("flash");},1400);
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll(".seg"),function(seg){
+    seg.addEventListener("click",function(ev){
+      var btn=ev.target.closest("button");if(!btn)return;
+      var key=seg.getAttribute("data-key"),val=btn.getAttribute("data-val");
+      state[key]=(key==="sort")?val:Number(val);
+      Array.prototype.forEach.call(seg.querySelectorAll("button"),function(b){b.setAttribute("aria-pressed",b===btn?"true":"false");});
+      render();
+    });
+  });
+  render();
+})();
+</script>
+</body>
+</html>
